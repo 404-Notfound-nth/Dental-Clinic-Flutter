@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    
+<!-- Mirrored from shreethemes.in/doctris/admin/add-doctor.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Jul 2021 19:48:28 GMT -->
+<head>
+        <meta charset="utf-8" />
+        <title>Doctris - Doctor Cuộc hẹn Booking System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+        <meta name="keywords" content="Cuộc hẹn, Booking, System, Bảng điều khiển, Health" />
+        <meta name="author" content="Shreethemes" />
+        <meta name="email" content="shreethemes@gmail.com" />
+        <meta name="website" content="http://www.shreethemes.in/" />
+        <meta name="Version" content="v1.0.0" />
+        <!-- favicon -->
+        <link rel="shortcut icon" th:href="@{/images/logo.jpg}">
+        <!-- Bootstrap -->
+        <link th:href="@{css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!-- simplebar -->
+        <link th:href="@{css/simplebar.css" rel="stylesheet" type="text/css" />
+        <!-- Select2 -->
+        <link rel="stylesheet" th:href="@{css/select2.min.css}"/>
+        <!-- Icons -->
+        <link th:href="@{css/materialdesignicons.min.css}" rel="stylesheet" type="text/css" />
+        <link th:href="@{/css/remixicon.css}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" th:href="@{/../../../unicons.iconscout.com/release/v3.0.6/css/line.css}">
+        <!-- Css -->
+        <link th:href="@{/css/style.min.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/fontawsome.css}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    </head>
+
+    <body>
+        <!-- Loader -->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Loader -->
+
+        <div class="page-wrapper chiller-theme toggled">
+            <nav id="sidebar" class="sidebar-wrapper">
+                <div class="sidebar-content" data-simplebar style="height: calc(100% - 60px);">
+                    <div class="sidebar-brand">
+                        <a href="#">DENTAL CLINIC BOOKING</a>
+                    </div>
+                    
+                    <!-- <li class="sidebar-dropdown">
+                        <a href="javascript:void(0)"></i>
+                            <div style="margin-left : 35px">Nha khoa</div>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="doctors.html">Nha khoa</a></li>
+                                <li><a href="add-doctor.html">Thêm nha khoa</a></li>
+                            </ul>
+                        </div>
+                    </li> -->
+                    <li style="margin-left : 35px">
+                    <a href="doctors.html"></i>Nha khoa</a>
+                    </li>
+                    <li></li>
+                    <li style="margin-left : 35px"><a href="appointment.html"></i>Cuộc hẹn</a></li>
+                    <li style="margin-left : 35px"><a href="login.html"></i>Đăng xuất</a></li>
+                    <!-- sidebar-menu  -->
+                </div>
+                <!-- sidebar-content  -->
+                </nav>
+            <!-- sidebar-wrapper  -->
+
+            <!-- Start Page Content -->
+            <main class="page-content bg-light">
+                <div class="top-header">
+                    <div class="header-bar d-flex justify-content-between border-bottom">
+                        <div class="d-flex align-items-center">
+                            <a href="#" class="logo-icon">
+                                <img src="images/logo-icon.png" height="30" class="small" alt="">
+                                <img src="images/logo-dark.png" height="22" class="big" alt="">
+                            </a>
+                            
+                            <div class="search-bar p-0 d-none d-lg-block ms-2">
+                                <div id="search" class="menu-search mb-0">
+                                    <form role="search" method="get" id="searchform" class="searchform">
+                                        <div>
+                                            <input type="text" class="border rounded-pill" name="s" id="s" placeholder="Search Keywords...">
+                                            <input type="submit" id="searchsubmit" value="Search">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+        
+                        </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="layout-specing">
+                        <div class="d-md-flex justify-content-between">
+                            <h5 class="mb-0">Add New Doctor</h5>
+
+                            <nav aria-label="breadcrumb" class="d-inline-block mt-4 mt-sm-0">
+                                <ul class="breadcrumb bg-transparent rounded mb-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index.html">Doctris</a></li>
+                                    <li class="breadcrumb-item"><a href="doctors.html">Nha khoa</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Thêm nha khoa</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-8 mt-4">
+                                <div class="card border-0 p-4 rounded shadow">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-2 col-md-4">
+                                            <img src="images/ava.png" class="avatar avatar-md-md rounded-pill shadow mx-auto d-block" alt="">
+                                        </div><!--end col-->
+            
+                                        <div class="col-lg-5 col-md-8 text-center text-md-start mt-4 mt-sm-0">
+                                            <h5 class="">Upload your picture</h5>
+                                            <p class="text-muted mb-0">For best results, use an image at least 600px by 600px in either .jpg or .png format</p>
+                                        </div><!--end col-->
+            
+                                        <div class="col-lg-5 col-md-12 text-lg-end text-center mt-4 mt-lg-0">
+                                            <a href="#" class="btn btn-primary">Upload</a>
+                                            <a href="#" class="btn btn-soft-primary ms-2">Remove</a>
+                                        </div><!--end col-->
+                                    </div><!--end row-->
+            
+                                    <form class="mt-4">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">First Name</label>
+                                                    <input name="name" id="name" type="text" class="form-control" placeholder="First Name :">
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Last Name</label>
+                                                    <input name="name" id="name2" type="text" class="form-control" placeholder="Last Name :">
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Your Email</label>
+                                                    <input name="email" id="email" type="email" class="form-control" placeholder="Your email :">
+                                                </div> 
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Phone no.</label>
+                                                    <input name="number" id="number" type="text" class="form-control" placeholder="Phone no. :">
+                                                </div>                                                                               
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Departments</label>
+                                                    <select class="form-control department-name select2input">
+                                                        <option value="EY">Eye Care</option>
+                                                        <option value="GY">Gynecologist</option>
+                                                        <option value="PS">Psychotherapist</option>
+                                                        <option value="OR">Orthopedic</option>
+                                                        <option value="DE">Dentist</option>
+                                                        <option value="GA">Gastrologist</option>
+                                                        <option value="UR">Urologist</option>
+                                                        <option value="NE">Neurologist</option>
+                                                    </select>
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Gender</label>
+                                                    <select class="form-control gender-name select2input">
+                                                        <option value="EY">Nam</option>
+                                                        <option value="GY">Female</option>
+                                                    </select>
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Instagram</label>
+                                                    <div class="input-group flex-nowrap">
+                                                        <span class="input-group-text bg-white border border-end-0" id="insta-id"><i data-feather="instagram" class="fea icon-sm"></i></span>
+                                                        <input type="text" class="form-control border" placeholder="Username" aria-label="Username" aria-describedby="insta-id">
+                                                    </div>
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Facebook</label>
+                                                    <div class="input-group flex-nowrap">
+                                                        <span class="input-group-text bg-white border border-end-0" id="fb-id"><i data-feather="facebook" class="fea icon-sm"></i></span>
+                                                        <input type="text" class="form-control border" placeholder="Username" aria-label="Username" aria-describedby="fb-id">
+                                                    </div>
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Linkedin</label>
+                                                    <div class="input-group flex-nowrap">
+                                                        <span class="input-group-text bg-white border border-end-0" id="linke-pro"><i data-feather="linkedin" class="fea icon-sm"></i></span>
+                                                        <input type="text" class="form-control border" placeholder="Username" aria-label="Username" aria-describedby="linke-pro">
+                                                    </div>
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-6">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Twitter</label>
+                                                    <div class="input-group flex-nowrap">
+                                                        <span class="input-group-text bg-white border border-end-0" id="twitter-id"><i data-feather="twitter" class="fea icon-sm"></i></span>
+                                                        <input type="text" class="form-control border" placeholder="Username" aria-label="Username" aria-describedby="twitter-id">
+                                                    </div>
+                                                </div>
+                                            </div><!--end col-->
+            
+                                            <div class="col-md-12">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Your Bio Here</label>
+                                                    <textarea name="comments" id="comments" rows="3" class="form-control" placeholder="Bio :"></textarea>
+                                                </div>
+                                            </div>
+                                        </div><!--end row-->
+            
+                                        <button type="submit" class="btn btn-primary">Thêm nha khoa</button>
+                                    </form>
+                                </div>
+                            </div><!--end col-->
+
+                            <div class="col-lg-4 mt-4">
+                                <div class="card rounded border-0 shadow">
+                                    <div class="p-4 border-bottom">
+                                        <h5 class="mb-0">Nha khoa List</h5>
+                                    </div>
+
+                                    <ul class="list-unstyled mb-0 p-4" data-simplebar style="height: 664px;">
+                                        <li class="d-md-flex align-items-center text-center text-md-start">
+                                            <img src="images/ava.png" class="avatar avatar-medium rounded-md shadow" alt="">
+
+                                            <div class="ms-md-3 mt-4 mt-sm-0">
+                                                <a href="#" class="text-dark h6">Dr. Thanh Hiệp</a>
+                                                <p class="text-muted my-1">Dentist</p>
+                                                <p class="text-muted mb-0">3 Years Experienced</p>
+                                            </div>
+                                        </li>
+
+                                        <li class="d-md-flex align-items-center text-center text-md-start mt-4">
+                                            <img src="images/ava.png" class="avatar avatar-medium rounded-md shadow" alt="">
+
+                                            <div class="ms-md-3 mt-4 mt-sm-0">
+                                                <a href="#" class="text-dark h6">Dr. Thanh Long</a>
+                                                <p class="text-muted my-1">Dentist</p>
+                                                <p class="text-muted mb-0">1 Years Experienced</p>
+                                            </div>
+                                        </li>
+
+                                        <li class="mt-4">
+                                            <a href="doctors.html" class="btn btn-primary">All Nha khoa</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div><!--end row-->
+                    </div>
+                </div><!--end container-->
+
+                <!-- Footer Start -->
+                
+                <!-- End -->
+            </main>
+            <!--End page-content" -->
+        </div>
+        <!-- page-wrapper -->
+
+        <!-- View Appintment Start -->
+        <div class="modal fade" id="viewappointment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header border-bottom p-3">
+                        <h5 class="modal-title" id="exampleModalLabel">Cuộc hẹn Detail</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body p-3 pt-4">
+                        <div class="d-flex align-items-center">
+                            <img src="images/client/01.jpg" class="avatar avatar-small rounded-pill" alt="">
+                            <h5 class="mb-0 ms-3">Howard Tanner</h5>
+                        </div>
+                        <ul class="list-unstyled mb-0 d-md-flex justify-content-between mt-4">
+                            <li>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-flex">
+                                        <h6>Age:</h6>
+                                        <p class="text-muted ms-2">25 year old</p>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        <h6>Gender:</h6>
+                                        <p class="text-muted ms-2">Nam</p>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        <h6 class="mb-0">Department:</h6>
+                                        <p class="text-muted ms-2 mb-0">Cardiology</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="d-flex">
+                                        <h6>Date:</h6>
+                                        <p class="text-muted ms-2">20th Dec 2020</p>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        <h6>Time:</h6>
+                                        <p class="text-muted ms-2">11:00 AM</p>
+                                    </li>
+
+                                    <li class="d-flex">
+                                        <h6 class="mb-0">Doctor:</h6>
+                                        <p class="text-muted ms-2 mb-0">Dr. Calvin Carlo</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- View Appintment End -->
+
+        <!-- Accept Cuộc hẹn Start -->
+        <div class="modal fade" id="acceptappointment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body py-5">
+                        <div class="text-center">
+                            <div class="icon d-flex align-items-center justify-content-center bg-soft-success rounded-circle mx-auto" style="height: 95px; width:95px;">
+                                <i class="fa fa-check h1 mb-0"></i>
+                            </div>
+                            <div class="mt-4">
+                                <h4>Accept Cuộc hẹn</h4>
+                                <p class="para-desc mx-auto text-muted mb-0">Great doctor if you need your family member to get immediate assistance, emergency treatment.</p>
+                                <div class="mt-4">
+                                    <a href="#" class="btn btn-soft-success">Accept</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Accept Cuộc hẹn End -->
+
+        <!-- Cancel Cuộc hẹn Start -->
+        <div class="modal fade" id="cancelappointment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body py-5">
+                        <div class="text-center">
+                            <div class="icon d-flex align-items-center justify-content-center bg-soft-danger rounded-circle mx-auto" style="height: 95px; width:95px;">
+                                <i class="fa fa-ban h1 mb-0"></i>
+                            </div>
+                            <div class="mt-4">
+                                <h4>Cancel Cuộc hẹn</h4>
+                                <p class="para-desc mx-auto text-muted mb-0">Great doctor if you need your family member to get immediate assistance, emergency treatment.</p>
+                                <div class="mt-4">
+                                    <a href="#" class="btn btn-soft-danger">Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Cancel Cuộc hẹn End -->
+        <!-- Modal end -->
+        
+        <!-- javascript -->
+        <script th:src="@{/js/jquery-3.5.1.min.js}"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!-- simplebar -->
+        <script th:src="@{/js/simplebar.min.js}"></script>
+        <!-- Select2 -->
+        <script th:src="@{/js/select2.min.js}"></script>
+        <script th:src="@{/js/select2.init.js}"></script>
+        <!-- Icons -->
+        <script th:src="@{/js/feather.min.js}"></script>
+        <!-- Main Js -->
+        <script th:src="@{/js/app-admin.js}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    </body>
+
+
+<!-- Mirrored from shreethemes.in/doctris/admin/add-doctor.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Jul 2021 19:48:28 GMT -->
+</html>

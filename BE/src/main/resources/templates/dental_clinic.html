@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from shreethemes.in/doctris/admin/doctors.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Jul 2021 19:48:28 GMT -->
+
+<head>
+    <meta charset="utf-8" />
+    <title>Dental Clinic Booking System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+    <meta name="keywords" content="Cuộc hẹn, Booking, System, Bảng điều khiển, Health" />
+    <meta name="author" content="Shreethemes" />
+    <meta name="email" content="shreethemes@gmail.com" />
+    <meta name="website" content="http://www.shreethemes.in/" />
+    <meta name="Version" content="v1.0.0" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/logo.jpg">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <!-- simplebar -->
+    <link href="css/simplebar.css" rel="stylesheet" type="text/css" />
+    <!-- Select2 -->
+    <link rel="stylesheet" href="css/select2.min.css" />
+    <!-- Date picker -->
+    <link rel="stylesheet" href="css/flatpickr.min.css">
+    <link href="css/jquery.timepicker.min.css" rel="stylesheet" type="text/css" />
+    <!-- Icons -->
+    <link href="css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/remixicon.css" rel="stylesheet" type="text/css" />
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../../../unicons.iconscout.com/release/v3.0.6/css/line.css">
+    <!-- Css -->
+    <link href="css/style.min.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .star-active {
+            color: #FBC02D;
+            margin-top: 10px;
+            margin-bottom: 10px
+        }
+
+        .star-active:hover {
+            color: #F9A825;
+            cursor: pointer
+        }
+
+        .star-inactive {
+            color: #CFD8DC;
+            margin-top: 10px;
+            margin-bottom: 10px
+        }
+
+        .inline span {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Loader -->
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Loader -->
+
+    <div class="page-wrapper chiller-theme toggled">
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content" data-simplebar style="height: calc(100% - 60px);">
+                <div class="sidebar-brand">
+                    <a href="#">DENTAL CLINIC BOOKING</a>
+                </div>
+
+                <ul class="sidebar-menu pt-3">
+                    <!-- <li class="sidebar-dropdown">
+                        <a href="javascript:void(0)"></i>
+                            <div style="margin-left : 35px">Nha khoa</div>
+                        </a>
+                        <div class="sidebar-submenu">
+                            <ul>
+                                <li><a href="doctors.html">Nha khoa</a></li>
+                                <li><a href="add-doctor.html">Thêm nha khoa</a></li>
+                            </ul>
+                        </div>
+                    </li> -->
+                    <li style="margin-left : 35px"><a href="doctors.html"></i>Nha khoa</a></li>
+                    <li style="margin-left : 35px"><a href="appointment.html"></i>Cuộc hẹn</a></li>
+                    <li style="margin-left : 35px"><a href="login.html"></i>Đăng xuất</a></li>
+                </ul>
+                <!-- sidebar-menu  -->
+            </div>
+            <!-- sidebar-content  -->
+        </nav>
+        <!-- sidebar-wrapper  -->
+
+        <!-- Start Page Content -->
+        <main class="page-content bg-light">
+            <div class="top-header">
+                <div class="header-bar d-flex justify-content-between border-bottom">
+                    <div class="d-flex align-items-center">
+                        <a href="#" class="logo-icon">
+                            <img src="images/logo-icon.png" height="30" class="small" alt="">
+                            <img src="images/logo-dark.png" height="22" class="big" alt="">
+                        </a>
+
+                        <div class="search-bar p-0 d-none d-lg-block ms-2">
+                            <div id="search" class="menu-search mb-0">
+                                <form role="search" method="get" id="searchform" class="searchform">
+                                    <div>
+                                        <input type="text" class="border rounded-pill" name="s" id="s"
+                                            placeholder="Search Keywords...">
+                                        <input type="submit" id="searchsubmit" value="Search">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <div class="layout-specing">
+                    <div class="row">
+                        <div class="col-xl-9 col-md-6">
+                            <h5 class="mb-0">Nha khoa</h5>
+
+                            <nav aria-label="breadcrumb" class="d-inline-block mt-2">
+                                <ul class="breadcrumb breadcrumb-muted bg-transparent rounded mb-0 p-0">
+                                    <li class="breadcrumb-item"><a href="index.html">Doctris</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Nha khoa</li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--end col-->
+
+                        <div class="col-xl-3 col-md-6 mt-4 mt-md-0 text-md-end">
+                            <a href="add-doctor.html" class="btn btn-primary">Thêm nha khoa</a>
+                        </div>
+                        <!--end col-->
+                    </div>
+                    <!--end row-->
+
+                    <div class="card-group">
+                        <div class="card">
+                            <div class="card-header">
+                                <button style="float: right;" type="button" class="btn-close" disabled
+                                    aria-label="Close"
+                                    onclick="return confirm('Bạn có muốn xóa nha khoa này không?');"></button>
+                            </div>
+                            <div class="text-center">
+                                <img class="img-fluid py-3 " src="images/clinic/hop1.jpg" width="300px"
+                                    alt="Card image cap">
+
+                                <h5 class="card-title"><a href="phong_kham_thu_duc.html"
+                                        class="title text-dark h5 d-block mb-0">Nha
+                                        khoa Thủ Đức</a></h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Phòng khám được trang bị cơ sở hiện đại, cùng với đội ngũ nhân viên
+                                    có tay
+                                    nghề
+                                    cao luôn sẵn sàng phục vụ quý khách</p>
+                                <p>
+                                    <b>Đánh giá:</b>
+                                    <span class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-inactive mx-1"></span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="nav-link">Cập nhật thông tin</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <button style="float: right;" type="button" class="btn-close" disabled
+                                    aria-label="Close"
+                                    onclick="return confirm('Bạn có muốn xóa nha khoa này không?');"></button>
+                            </div>
+                            <div class="text-center">
+                                <img class="img-fluid py-3 " src="images/clinic/hop2.jpg" width="300px"
+                                    alt="Card image cap">
+
+                                <h5 class="card-title"><a href="phong_kham_B.html"
+                                        class="title text-dark h5 d-block mb-0">Nha
+                                        khoa B</a></h5>
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text">Phòng khám được trang bị cơ sở hiện đại, cùng với đội ngũ nhân viên
+                                    có tay
+                                    nghề
+                                    cao luôn sẵn sàng phục vụ quý khách</p>
+
+                                <p>
+                                    <b>Đánh giá:</b>
+                                    <span class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-inactive mx-1"></span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="nav-link">Cập nhật thông tin</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <button style="float: right;" type="button" class="btn-close" disabled
+                                    aria-label="Close"
+                                    onclick="return confirm('Bạn có muốn xóa nha khoa này không?');"></button>
+                            </div>
+                            <div class="text-center">
+                                <img class="img-fluid py-3 " src="images/clinic/hop3.jpg" width="300px"
+                                    alt="Card image cap">
+
+                                <h5 class="card-title"><a href="phong_kham_C.html"
+                                        class="title text-dark h5 d-block mb-0">Nha
+                                        khoa C</a></h5>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">Phòng khám được trang bị cơ sở hiện đại, cùng với đội ngũ nhân viên
+                                    có tay
+                                    nghề
+                                    cao luôn sẵn sàng phục vụ quý khách</p>
+                                <p>
+                                    <b>Đánh giá:</b>
+                                    <span class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-inactive mx-1"></span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="nav-link">Cập nhật thông tin</a>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <button style="float: right;" type="button" class="btn-close" disabled
+                                    aria-label="Close"
+                                    onclick="return confirm('Bạn có muốn xóa nha khoa này không?');"></button>
+                            </div>
+                            <div class="text-center">
+                                <img class="img-fluid py-3 " src="images/clinic/hop4.jpg" width="300px"
+                                    alt="Card image cap">
+
+                                <h5 class="card-title"><a href="phong_kham_D.html"
+                                        class="title text-dark h5 d-block mb-0">Nha
+                                        khoa D</a></h5>
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text">Phòng khám được trang bị cơ sở hiện đại, cùng với đội ngũ nhân viên
+                                    có tay
+                                    nghề
+                                    cao luôn sẵn sàng phục vụ quý khách</p>
+                                <p>
+                                    <b>Đánh giá:</b>
+                                    <span class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-active mx-1"></span> <span
+                                        class="fa fa-star star-inactive mx-1"></span>
+                                </p>
+                            </div>
+                            <div class="card-footer">
+                                <a href="" class="nav-link">Cập nhật thông tin</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br/>
+
+                </div>
+                <!-- 
+                    <span class="inline">
+                        <div class="row row-cols-xl-5 inline">
+                            <div class="col-xl col-lg-4 col-md-6 mt-4">
+                                <div class="card team border-0 rounded shadow overflow-hidden">
+                                    <div class="team-img position-relative">
+                                        <img src="images/ava.png" class="img-fluid" alt="">
+                                        <ul class="list-unstyled team-social mb-0">
+                                            <li><a href="#" class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="facebook" class="icons"></i></a></li>
+                                            <li class="mt-2"><a href="#"
+                                                    class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="linkedin" class="icons"></i></a></li>
+                                            <li class="mt-2"><a href="#"
+                                                    class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="instagram" class="icons"></i></a></li>
+                                            <li class="mt-2"><a href="#"
+                                                    class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="twitter" class="icons"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body content text-center">
+                                        <a href="bbbootstrap-snippet.html" class="title text-dark h5 d-block mb-0">Nha
+                                            khoa thủ đức</a>
+                                        <small class="text-muted speciality">4.0/5 </small>
+                                        <div> <span class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-inactive mx-1"></span> </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row row-cols-xl-5 inline">
+                            <div class="col-xl col-lg-4 col-md-6 mt-4">
+                                <div class="card team border-0 rounded shadow overflow-hidden">
+                                    <div class="team-img position-relative">
+                                        <img src="images/ava.png" class="img-fluid" alt="">
+                                        <ul class="list-unstyled team-social mb-0">
+                                            <li><a href="#" class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="facebook" class="icons"></i></a></li>
+                                            <li class="mt-2"><a href="#"
+                                                    class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="linkedin" class="icons"></i></a></li>
+                                            <li class="mt-2"><a href="#"
+                                                    class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="instagram" class="icons"></i></a></li>
+                                            <li class="mt-2"><a href="#"
+                                                    class="btn btn-icon btn-pills btn-soft-primary"><i
+                                                        data-feather="twitter" class="icons"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body content text-center">
+                                        <a href="bbbootstrap-snippet.html" class="title text-dark h5 d-block mb-0">Nha
+                                            khoa thủ đức</a>
+                                        <small class="text-muted speciality">4.0/5 </small>
+                                        <div> <span class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-active mx-1"></span> <span
+                                                class="fa fa-star star-inactive mx-1"></span> </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </span> -->
+            </div>
+            <!--end col-->
+    </div>
+
+    <!--end row-->
+    </div>
+    </div>
+    <!--end container-->
+
+    <!-- Footer Start -->
+
+    <!-- End -->
+    </main>
+    <!--End page-content" -->
+    </div>
+    <!-- page-wrapper -->
+
+    <!-- javascript -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- simplebar -->
+    <script src="js/simplebar.min.js"></script>
+    <!-- Icons -->
+    <script src="js/feather.min.js"></script>
+    <!-- Main Js -->
+    <script src="js/app-admin.js"></script>
+
+</body>
+
+
+<!-- Mirrored from shreethemes.in/doctris/admin/doctors.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Jul 2021 19:48:28 GMT -->
+
+</html>
