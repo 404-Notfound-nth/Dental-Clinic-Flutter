@@ -26,8 +26,8 @@ public class Dentistry {
 	@Column(name = "name", columnDefinition = "nvarchar(MAX)")
 	private String name;
 	
-	@Column(name = "kilometer", columnDefinition = "int")
-	private int kilometer;
+	//@Column(name = "kilometer", columnDefinition = "float")
+	private String kilometer;
 	
 	@Column(name = "rating", columnDefinition = "float")
 	private float rating;
@@ -37,6 +37,9 @@ public class Dentistry {
 	
 	@Column(name = "email")
 	private String email;
+	
+	@Column(name = "description", columnDefinition = "nvarchar(255)")
+	private String description;
 	
 //	@OneToMany(mappedBy = "dentistry", fetch = FetchType.LAZY)
 //	private List<Booking> booking;

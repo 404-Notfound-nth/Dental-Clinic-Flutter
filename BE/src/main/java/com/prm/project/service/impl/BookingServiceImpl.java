@@ -19,6 +19,8 @@ public class BookingServiceImpl implements BookingService{
 	public static final String CANCEL_STATUS = "CANCEL";
 	public static final String ACCEPT_STATUS = "ACCEPT";
 	public static final String DENY_STATUS = "DENY";
+	public static final String WATTING_STATUS = "WATTING";
+	public static final String FINISHED_STATUS = "FINISHED";
 	
 	@Autowired
 	private ModelMapper modelMapper;
@@ -130,6 +132,40 @@ public class BookingServiceImpl implements BookingService{
 			booking.setNote(note);
 			booking.setModifiedDate(date);
 			
+			bookingRepository.save(booking);
+		}
+	}
+
+
+	@Override
+	public void addBooking(BookingDTO bookingDTO) {
+		// TODO Auto-generated method stub
+		//System.err.println(bookingDTO.);
+		Booking booking = bookingRepository.findByAccountPhone(bookingDTO.getAccount_phone());
+		if(booking != null ) {
+			long millis=System.currentTimeMillis();   
+			java.util.Date date=new java.util.Date(millis);
+			//bookingDTO.setId(UUID.randomUUID().toString());
+			booking.setAccount_phone(bookingDTO.getAccount_phone());
+			booking.setCreateDate(date);
+			booking.setDate(bookingDTO.getDate());
+			booking.setTime(bookingDTO.getTime());
+			booking.setService_id(bookingDTO.getService_id());
+			booking.setStatus_id(WATTING_STATUS);
+			booking.setNote(bookingDTO.getNote());
+		//booking = modelMapper.map(bookingDTO, Booking.class);
+		bookingRepository.save(booking);
+		}
+		
+	}
+
+
+	@Override
+	public void editStatus(String phone) {
+		// TODO Auto-generated method stub
+		Booking booking = bookingRepository.findByAccountPhone(phone);
+		if(booking != null) {
+			booking.setStatus_id(FINISHED_STATUS);
 			bookingRepository.save(booking);
 		}
 	}

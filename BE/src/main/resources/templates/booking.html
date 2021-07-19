@@ -197,7 +197,6 @@
 					<th>Ngày đặt</th>
 					<th>Thời gian đặt</th>
 					<th>Loại dịch vụ</th>
-					<th>Trạng thái</th>
 					<th width="5px; !important">Tính Năng</th>
 				</tr>
 			</thead>
@@ -205,20 +204,20 @@
 				<tr th:each="list, iter: ${LIST_BOOKING}">
 					<td th:text="${list.account_phone}"></td>
 					<td th:text="${list.account.fullname}"></td>
-					<td th:text="${list.date}"></td>
+					<td th:text="${#dates.format(list.date,'dd-MM-yyyy')}"></td>
 					<td th:text="${list.time}"></td>
 					<td th:text="${list.service.serviceName}"></td>
-					<td th:text="${list.status_id}"></td>
+					<!-- <td><select>
+							<option th:each="listDoctor : ${LIST_DOCTOR}"><span
+									th:text="${listDoctor.doctorName}"></span>
+							</option>
+					</select></td> -->
 					<td>
 						<!-- <a class="add" title="Lưu Lại" data-toggle="tooltip"><i class="fa fa-floppy-o"
                                 aria-hidden="true"></i></a> --> <!-- <a class="edit" title="Sửa" data-toggle="tooltip"><i class="fa fa-check-circle-o"
                                 aria-hidden="true"></i></a>
                         <a class="delete" title="Xóa" data-toggle="tooltip"><i class="fa fa-ban"
-                                aria-hidden="true"></i></a>	 --> 
-                                <a
-						th:href="@{ '/editStatus/' + ${list.account_phone}}"><i
-							class="fa fa-check-square-o" aria-hidden="true"></i></a>
-                                <a
+                                aria-hidden="true"></i></a>	 --> <a
 						th:href="@{ '/add-bookingDetail/' + ${list.id}}"><i
 							class="fa fa-arrow-right" aria-hidden="true"></i></a> <!--  <a th:href = "@{ '/deny/' + ${list.account_phone}}"><i class="fa fa-ban"
                                 aria-hidden="true"></i></a>  -->

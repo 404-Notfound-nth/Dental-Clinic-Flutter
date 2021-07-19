@@ -7,4 +7,5 @@ import com.prm.project.dto.DentistryDTO;
 public interface DentistryService {
 	List<DentistryDTO> getListDentistry();
 	DentistryDTO getDentistry(String address);
+	void updateRating(int rating);
 }

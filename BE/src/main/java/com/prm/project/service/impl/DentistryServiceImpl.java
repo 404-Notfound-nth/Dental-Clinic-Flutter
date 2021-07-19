@@ -19,8 +19,7 @@ public class DentistryServiceImpl implements DentistryService{
 
 	private DentistryRepository dentistryRepository;
 	
-	
-	
+
 	public DentistryServiceImpl( DentistryRepository dentistryRepository) {
 		super();
 		this.dentistryRepository = dentistryRepository;
@@ -44,6 +43,12 @@ public class DentistryServiceImpl implements DentistryService{
 		Dentistry dentistry = dentistryRepository.findById(address).get();
 		DentistryDTO dentistryDTO = modelMapper.map(dentistry, DentistryDTO.class);
 		return dentistryDTO;
+	}
+
+	@Override
+	public void updateRating(int rating) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

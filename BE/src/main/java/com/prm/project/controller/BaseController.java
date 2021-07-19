@@ -47,6 +47,8 @@ public class BaseController {
 		model.addAttribute("LIST_CUSTOMER", booking);
 		return "appointment";
 	}
+	
+	
 
 	@RequestMapping("/dental_clinic")
 	public String doctors(Model model) {
@@ -75,6 +77,7 @@ public class BaseController {
 		model.addAttribute("LIST_CUSTOMER", booking);
 		return "appointment";
 	}
+	
 
 	@RequestMapping("/history")
 	public String history(Model model) {
@@ -87,6 +90,11 @@ public class BaseController {
 		model.addAttribute("LIST_RATE", rate);
 		return "rating";
 	}
+	
+	@RequestMapping("/booking")
+	public String booking(Model model) {
+		return "booking";
+	}
 
 	@RequestMapping("/bookingDetail")
 	public String bookingDetail(Model model) {
@@ -96,6 +104,16 @@ public class BaseController {
 
 		return "bookingDetail";
 	}
+	
+	@GetMapping("/editStatus/{phone}")
+	public String editStatus(@PathVariable("phone") String phone, Model model) {
+		bookingService.editStatus(phone);
+		List<BookingDTO> listBookingDTO = bookingService.getListBooking();
+
+		model.addAttribute("LIST_BOOKING", listBookingDTO);
+		return "bookingDetail";
+	}
+
 
 	@RequestMapping("/add-bookingDetail/{id}")
 	public String addBookingDetail(@PathVariable("id") String id, Model model) {

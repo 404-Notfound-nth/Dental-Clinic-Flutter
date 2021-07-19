@@ -1,7 +1,5 @@
 package com.prm.project.entity;
 
-import java.sql.Time;
-
 import java.util.Date;
 import java.util.Set;
 
@@ -49,10 +47,10 @@ public class Booking {
 	@Column(name = "service_id", columnDefinition = "uniqueidentifier")
 	private String service_id;
 	
-	private Time time;
+	private String time;
 	
-	@Column(name = "date", columnDefinition = "date")
-	private Date date;
+	//@Column(name = "date", columnDefinition = "date")
+	private String date;
 	
 	@Column(columnDefinition = "nvarchar(255)")
 	private String dentistry_address;

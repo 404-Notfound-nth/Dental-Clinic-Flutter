@@ -1,7 +1,6 @@
 package com.prm.project.dto;
 
 import java.io.Serializable;
-import java.sql.Time;
 import java.util.Date;
 
 import com.prm.project.entity.Service;
@@ -26,9 +25,9 @@ public class BookingDTO implements Serializable {
 	
 	private Date modifiedDate;
 
-	private Time time;
+	private String time;
 	
-	private Date date;
+	private String date;
 	
 	private String note;
 

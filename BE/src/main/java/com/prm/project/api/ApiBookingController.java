@@ -5,12 +5,15 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.prm.project.dto.BookingDTO;
+import com.prm.project.entity.Booking;
+import com.prm.project.repository.BookingRepository;
 import com.prm.project.service.BookingService;
 
 @RestController
@@ -19,6 +22,9 @@ public class ApiBookingController {
 	
 	@Autowired
 	private BookingService bookingService;
+	
+	@Autowired
+	private BookingRepository bookingRepository;
 	
 	@PutMapping("cancel/{booking_id}/{note}")
 	public ResponseEntity<Object> cancelBooking(@PathVariable("booking_id") String booking_id,@PathVariable("note") String note) {
@@ -69,6 +75,21 @@ public class ApiBookingController {
 		} catch (Exception e) {
 			// TODO: handle exception
 			return new ResponseEntity<Object>(HttpStatus.BAD_GATEWAY);
+		}
+	}
+	
+	@PostMapping("add-booking")
+	public ResponseEntity<Object> addBooking(@RequestBody BookingDTO bookingDTO){
+		try {
+//			Booking booking = bookingRepository.findByAccountPhone(bookingDTO.getAccount_phone());
+//			if(booking.getAccount_phone() == null) {
+//				return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
+//			}
+			bookingService.addBooking(bookingDTO);
+			return new ResponseEntity<Object>("OK", HttpStatus.OK);
+		} catch (Exception e){
+			// TODO: handle exception
+			return new ResponseEntity<Object>(HttpStatus.BAD_REQUEST);
 		}
 	}
 }

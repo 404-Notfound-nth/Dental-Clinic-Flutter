@@ -22,4 +22,8 @@ public interface BookingService {
 	List<BookingDTO> getListBooking();
 	
 	BookingDTO getBooking(String phone);
+	
+	void addBooking(BookingDTO bookingDTO);
+	
+	void editStatus(String phone);
 }

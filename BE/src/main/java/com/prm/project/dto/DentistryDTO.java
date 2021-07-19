@@ -21,13 +21,15 @@ public class DentistryDTO implements Serializable {
 
 	private String name;
 
-	private int kilometer;
+	private String kilometer;
 
 	private float rating;
 
 	private String image;
 
 	private String email;
+	
+	private String description;
 	
 
 }
